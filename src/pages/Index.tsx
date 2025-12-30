@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { HeroSection } from "@/components/home/HeroSection";
 import { ServiceCard } from "@/components/shared/ServiceCard";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { ContactCTA } from "@/components/shared/ContactCTA";
@@ -77,37 +78,7 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-primary text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/90" />
-        <div className="container relative py-20 md:py-32">
-          <div className="max-w-3xl">
-            <span className="inline-block text-accent font-medium text-sm uppercase tracking-wider mb-4 animate-fade-up">
-              ICAI Registered Firm
-            </span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Professional Financial & 
-              <span className="text-accent"> Compliance Services</span>
-            </h1>
-            <p className="text-lg md:text-xl opacity-90 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Yagya Prakash Sharda & Co. provides comprehensive chartered accountancy 
-              services with a commitment to integrity, accuracy, and client confidentiality.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              <Button variant="accent" size="lg" asChild>
-                <Link to="/contact">Book Consultation</Link>
-              </Button>
-              <Button variant="outline-accent" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                <Link to="/services">Our Services</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-        {/* Decorative Elements */}
-        <div className="absolute bottom-0 right-0 w-1/3 h-full opacity-10">
-          <div className="absolute bottom-10 right-10 w-64 h-64 border-2 border-primary-foreground rounded-full" />
-          <div className="absolute bottom-20 right-32 w-40 h-40 border-2 border-primary-foreground rounded-full" />
-        </div>
-      </section>
+      <HeroSection />
 
       {/* About Snippet */}
       <section className="section-padding">
@@ -131,10 +102,10 @@ export default function Index() {
                 confidentiality, and quality in all our engagements. Our approach combines 
                 technical expertise with practical insights to deliver value-added services.
               </p>
-              <Button variant="outline" asChild>
+              <Button variant="outline" className="group" asChild>
                 <Link to="/about">
                   Learn More About Us
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
@@ -142,9 +113,11 @@ export default function Index() {
               {features.map((feature, index) => (
                 <div 
                   key={index} 
-                  className="p-6 bg-card rounded-lg border border-border"
+                  className="p-6 bg-card rounded-xl border border-border card-hover"
                 >
-                  <feature.icon className="h-8 w-8 text-accent mb-4" />
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                    <feature.icon className="h-6 w-6 text-accent" />
+                  </div>
                   <h3 className="font-heading font-semibold mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </div>
@@ -168,10 +141,10 @@ export default function Index() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Button variant="default" asChild>
+            <Button variant="default" className="group" asChild>
               <Link to="/services">
                 View All Services
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
           </div>
@@ -181,41 +154,62 @@ export default function Index() {
       {/* Why Choose Us */}
       <section className="section-padding">
         <div className="container">
-          <div className="bg-primary rounded-xl p-8 md:p-12 text-primary-foreground">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div 
+            className="rounded-2xl p-8 md:p-12 text-primary-foreground overflow-hidden relative"
+            style={{
+              background: "linear-gradient(135deg, hsl(210 100% 20%) 0%, hsl(210 80% 28%) 50%, hsl(210 70% 32%) 100%)",
+            }}
+          >
+            {/* Decorative Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/5 blur-2xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-accent/10 blur-2xl" />
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
               <div>
                 <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-6">
                   Why Choose Our Firm?
                 </h2>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
                     <span>ICAI registered firm with qualified professionals</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
                     <span>Commitment to confidentiality and professional ethics</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
                     <span>Systematic approach ensuring timely compliance</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
                     <span>Personalized attention to every client's needs</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-accent" />
+                    </div>
                     <span>Transparent communication and regular updates</span>
                   </li>
                 </ul>
               </div>
               <div className="flex justify-center">
-                <div className="bg-primary-foreground/10 rounded-lg p-8 text-center">
-                  <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/20">
+                  <div className="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-glow">
                     <Shield className="h-10 w-10 text-accent-foreground" />
                   </div>
-                  <p className="text-lg font-medium mb-2">ICAI Registered</p>
+                  <p className="text-xl font-semibold mb-2">ICAI Registered</p>
                   <p className="text-sm opacity-80">FRN: 123456N</p>
                 </div>
               </div>
