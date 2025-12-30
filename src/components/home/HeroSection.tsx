@@ -23,31 +23,37 @@ export function HeroSection() {
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         {/* Gradient Background */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             background: "linear-gradient(135deg, hsl(210 100% 20%) 0%, hsl(210 80% 28%) 50%, hsl(210 70% 32%) 100%)",
           }}
         />
-        
+
         {/* Decorative Patterns */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Subtle grid pattern */}
-          <div 
+          <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
               backgroundImage: `
                 linear-gradient(90deg, white 1px, transparent 1px),
                 linear-gradient(180deg, white 1px, transparent 1px)
               `,
-              backgroundSize: '60px 60px',
+              backgroundSize: "60px 60px",
             }}
           />
-          
+
           {/* Floating circles */}
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white/5 blur-3xl animate-float" />
-          <div className="absolute top-1/2 -left-32 w-64 h-64 rounded-full bg-accent/10 blur-2xl animate-float" style={{ animationDelay: '2s' }} />
-          <div className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full bg-white/5 blur-2xl animate-float" style={{ animationDelay: '4s' }} />
+          <div
+            className="absolute top-1/2 -left-32 w-64 h-64 rounded-full bg-accent/10 blur-2xl animate-float"
+            style={{ animationDelay: "2s" }}
+          />
+          <div
+            className="absolute bottom-20 right-1/4 w-48 h-48 rounded-full bg-white/5 blur-2xl animate-float"
+            style={{ animationDelay: "4s" }}
+          />
         </div>
 
         <div className="container relative z-10">
@@ -55,9 +61,7 @@ export function HeroSection() {
             {/* Left Content */}
             <div className="text-primary-foreground">
               {/* Tag */}
-              <div 
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 mb-6 animate-fade-up"
-              >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 mb-6 animate-fade-up">
                 <Shield className="h-4 w-4 text-accent" />
                 <span className="text-sm font-medium text-accent tracking-wide uppercase">
                   ICAI Registered Chartered Accountant Firm
@@ -65,39 +69,35 @@ export function HeroSection() {
               </div>
 
               {/* Headline */}
-              <h1 
-                className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-up"
-                style={{ animationDelay: '0.1s' }}
+              <h1
+                className="font-heading text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-up"
+                style={{ animationDelay: "0.1s" }}
               >
-                Professional Financial & 
-                <span className="block text-accent mt-2">Compliance Services</span>
+                Professional Financial &<span className="block text-accent mt-2">Compliance Services</span>
               </h1>
 
               {/* Subtext */}
-              <p 
+              <p
                 className="text-lg md:text-xl opacity-90 mb-8 leading-relaxed max-w-xl animate-fade-up"
-                style={{ animationDelay: '0.2s' }}
+                style={{ animationDelay: "0.2s" }}
               >
-                We provide structured tax, audit and advisory services with accuracy, 
-                transparency and strict client confidentiality.
+                We provide structured tax, audit and advisory services with accuracy, transparency and strict client
+                confidentiality.
               </p>
 
               {/* Buttons */}
-              <div 
-                className="flex flex-col sm:flex-row gap-4 animate-fade-up"
-                style={{ animationDelay: '0.3s' }}
-              >
-                <Button 
-                  variant="accent" 
-                  size="lg" 
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+                <Button
+                  variant="accent"
+                  size="lg"
                   className="rounded-full px-8 shadow-glow hover:scale-105 transition-transform duration-300"
                   asChild
                 >
                   <Link to="/contact">Book Consultation</Link>
                 </Button>
-                <Button 
-                  variant="ghost" 
-                  size="lg" 
+                <Button
+                  variant="ghost"
+                  size="lg"
                   className="rounded-full px-8 border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50 transition-all duration-300"
                   asChild
                 >
@@ -107,7 +107,10 @@ export function HeroSection() {
             </div>
 
             {/* Right - Financial Illustration */}
-            <div className="hidden lg:flex justify-center items-center animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
+            <div
+              className="hidden lg:flex justify-center items-center animate-slide-in-right"
+              style={{ animationDelay: "0.4s" }}
+            >
               <div className="relative w-full max-w-md">
                 {/* Main Card */}
                 <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-intense">
@@ -133,12 +136,12 @@ export function HeroSection() {
                     {/* Bar Chart */}
                     <div className="flex items-end gap-3 h-32">
                       {[40, 60, 35, 80, 55, 70, 90].map((height, i) => (
-                        <div 
+                        <div
                           key={i}
                           className="flex-1 rounded-t-lg bg-gradient-to-t from-accent/40 to-accent transition-all duration-500 hover:from-accent/60 hover:to-accent"
-                          style={{ 
+                          style={{
                             height: `${height}%`,
-                            animationDelay: `${0.5 + i * 0.1}s`
+                            animationDelay: `${0.5 + i * 0.1}s`,
                           }}
                         />
                       ))}
@@ -166,7 +169,10 @@ export function HeroSection() {
                 <div className="absolute -top-6 -right-6 bg-accent rounded-xl p-4 shadow-lg animate-float">
                   <CheckCircle className="h-6 w-6 text-accent-foreground" />
                 </div>
-                <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur rounded-lg px-4 py-2 border border-white/20 animate-float" style={{ animationDelay: '3s' }}>
+                <div
+                  className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur rounded-lg px-4 py-2 border border-white/20 animate-float"
+                  style={{ animationDelay: "3s" }}
+                >
                   <p className="text-sm text-white font-medium">ICAI Certified</p>
                 </div>
               </div>
@@ -180,7 +186,7 @@ export function HeroSection() {
         <div className="container py-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {trustPoints.map((point, index) => (
-              <div 
+              <div
                 key={index}
                 className="flex items-center justify-center gap-3 text-center md:text-left animate-fade-up"
                 style={{ animationDelay: `${0.1 * index}s` }}
