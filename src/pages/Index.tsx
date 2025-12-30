@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { HeroSection } from "@/components/home/HeroSection";
+import { TrendingInsights } from "@/components/home/TrendingInsights";
 import { ServiceCard } from "@/components/shared/ServiceCard";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { ContactCTA } from "@/components/shared/ContactCTA";
@@ -150,6 +151,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Trending Insights */}
+      <TrendingInsights />
 
       {/* Why Choose Us */}
       <section className="section-padding">
