@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, CheckCircle, Lock, TrendingUp, BarChart3, PieChart } from "lucide-react";
+import { Shield, CheckCircle, Lock, AlertCircle, FileText, ClipboardList, ArrowRight } from "lucide-react";
 
 const trustPoints = [
   {
@@ -98,63 +98,107 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Right - Financial Illustration */}
+            {/* Right - Trending Updates Card */}
             <div
               className="hidden lg:flex justify-center items-center animate-slide-in-right"
               style={{ animationDelay: "0.4s" }}
             >
               <div className="relative w-full max-w-md">
                 {/* Main Card */}
-                <div className="relative bg-card backdrop-blur-md rounded-2xl p-8 border border-border shadow-elevated">
-                  {/* Abstract Chart Visualization */}
-                  <div className="space-y-6">
-                    {/* Header */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                          <TrendingUp className="h-5 w-5 text-accent" />
+                <div className="relative bg-card rounded-2xl p-6 border border-border shadow-elevated">
+                  {/* Header */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                      <AlertCircle className="h-5 w-5 text-accent" />
+                    </div>
+                    <h3 className="font-heading font-semibold text-foreground">
+                      Trending Tax & Compliance Updates
+                    </h3>
+                  </div>
+
+                  {/* Update Items */}
+                  <div className="space-y-0">
+                    {/* Item 1 */}
+                    <div className="py-4 border-b border-border">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <FileText className="h-4 w-4 text-primary" />
                         </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">Financial Growth</p>
-                          <p className="text-lg font-semibold text-foreground">Compliance Status</p>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-foreground mb-1">
+                            Upcoming GST Return Deadlines
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-muted-foreground">Dec 28, 2024</span>
+                            <Link 
+                              to="/blog" 
+                              className="text-xs font-medium text-primary hover:text-accent transition-colors inline-flex items-center gap-1"
+                            >
+                              Read More
+                              <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          </div>
                         </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-accent text-sm font-medium">100%</p>
-                        <p className="text-xs text-muted-foreground">Compliant</p>
                       </div>
                     </div>
 
-                    {/* Bar Chart */}
-                    <div className="flex items-end gap-3 h-32">
-                      {[40, 60, 35, 80, 55, 70, 90].map((height, i) => (
-                        <div
-                          key={i}
-                          className="flex-1 rounded-t-lg bg-gradient-to-t from-primary/40 to-primary transition-all duration-500 hover:from-primary/60 hover:to-primary"
-                          style={{
-                            height: `${height}%`,
-                            animationDelay: `${0.5 + i * 0.1}s`,
-                          }}
-                        />
-                      ))}
+                    {/* Item 2 */}
+                    <div className="py-4 border-b border-border">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <AlertCircle className="h-4 w-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-foreground mb-1">
+                            Recent Income Tax Notifications
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-muted-foreground">Dec 22, 2024</span>
+                            <Link 
+                              to="/blog" 
+                              className="text-xs font-medium text-primary hover:text-accent transition-colors inline-flex items-center gap-1"
+                            >
+                              Read More
+                              <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Stats Row */}
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
-                      <div className="text-center">
-                        <BarChart3 className="h-5 w-5 text-primary mx-auto mb-1" />
-                        <p className="text-xs text-muted-foreground">Tax Filing</p>
-                      </div>
-                      <div className="text-center">
-                        <PieChart className="h-5 w-5 text-primary mx-auto mb-1" />
-                        <p className="text-xs text-muted-foreground">Audit</p>
-                      </div>
-                      <div className="text-center">
-                        <TrendingUp className="h-5 w-5 text-accent mx-auto mb-1" />
-                        <p className="text-xs text-muted-foreground">Advisory</p>
+                    {/* Item 3 */}
+                    <div className="py-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                          <ClipboardList className="h-4 w-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-foreground mb-1">
+                            Important ROC Compliance Reminders
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-muted-foreground">Dec 18, 2024</span>
+                            <Link 
+                              to="/blog" 
+                              className="text-xs font-medium text-primary hover:text-accent transition-colors inline-flex items-center gap-1"
+                            >
+                              Read More
+                              <ArrowRight className="h-3 w-3" />
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* View All Button */}
+                  <Link
+                    to="/blog"
+                    className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary/5 text-primary text-sm font-medium hover:bg-primary/10 transition-colors"
+                  >
+                    View All Insights
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
 
                 {/* Floating Elements */}
