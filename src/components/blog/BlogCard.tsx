@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Calendar, ArrowRight, Play } from "lucide-react";
-import { BlogPost, extractYouTubeId, getYouTubeThumbnail } from "@/hooks/useBlogPosts";
+import { BlogPost } from "@/hooks/useBlogPosts";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -9,18 +9,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post, onVideoClick }: BlogCardProps) {
   const isVideo = post.type === "video";
-  
-  // Get thumbnail: use provided thumbnail, or generate from YouTube for videos
-  const getThumbnail = (): string | null => {
-    if (post.thumbnail) return post.thumbnail;
-    if (isVideo && post.link) {
-      const videoId = extractYouTubeId(post.link);
-      if (videoId) return getYouTubeThumbnail(videoId);
-    }
-    return null;
-  };
-
-  const thumbnail = getThumbnail();
+  const thumbnail = post.thumbnail || null;
 
   const handleClick = (e: React.MouseEvent) => {
     if (isVideo && onVideoClick) {
