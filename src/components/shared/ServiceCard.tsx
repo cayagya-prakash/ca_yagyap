@@ -13,7 +13,7 @@ interface ServiceCardProps {
 export function ServiceCard({ title, description, icon: Icon, href, className }: ServiceCardProps) {
   return (
     <Link
-      to={href}
+      to={''}
       className={cn(
         "group block p-6 bg-card rounded-lg border border-border transition-all duration-300",
         "hover:shadow-elevated hover:border-accent/30 hover:-translate-y-1",
@@ -29,10 +29,10 @@ export function ServiceCard({ title, description, icon: Icon, href, className }:
       <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
         {description}
       </p>
-      <span className="inline-flex items-center text-sm font-medium text-primary group-hover:text-accent transition-colors">
+      {/* <span className="inline-flex items-center text-sm font-medium text-primary group-hover:text-accent transition-colors">
         Learn More
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-      </span>
+      </span> */}
     </Link>
   );
 }

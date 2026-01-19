@@ -1,224 +1,243 @@
-import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { ContactCTA } from "@/components/shared/ContactCTA";
-import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { CheckCircle, FileText, ArrowRight } from "lucide-react";
+import React from "react";
+import audit from "../../../public/audit.jpg";
 
-const auditTypes = [
-  {
-    title: "Statutory Audit",
-    description: "Audit of financial statements as required under the Companies Act, 2013.",
-  },
-  {
-    title: "Tax Audit",
-    description: "Audit under Section 44AB of the Income Tax Act for eligible businesses.",
-  },
-  {
-    title: "Internal Audit",
-    description: "Review of internal controls, processes, and operational efficiency.",
-  },
-  {
-    title: "GST Audit",
-    description: "Reconciliation of GST returns with financial statements as per GST law.",
-  },
-];
-
-const processSteps = [
-  {
-    step: "01",
-    title: "Planning",
-    description: "Understanding business, assessing risks, and developing audit plan.",
-  },
-  {
-    step: "02",
-    title: "Fieldwork",
-    description: "Verification of records, testing controls, and gathering evidence.",
-  },
-  {
-    step: "03",
-    title: "Review",
-    description: "Analysis of findings and discussion with management.",
-  },
-  {
-    step: "04",
-    title: "Reporting",
-    description: "Issuance of audit report with observations and recommendations.",
-  },
-];
-
-const faqs = [
-  {
-    question: "Who is required to get their accounts audited?",
-    answer: "Under the Companies Act, all companies are required to appoint an auditor and get their accounts audited. Under Income Tax Act, businesses with turnover exceeding Rs. 1 crore (Rs. 10 crores if digital transactions exceed 95%) and professionals with gross receipts exceeding Rs. 50 lakhs are required to get tax audit done.",
-  },
-  {
-    question: "What is the difference between statutory audit and internal audit?",
-    answer: "Statutory audit is mandatory under law and results in an audit report on financial statements. Internal audit is a management tool to evaluate and improve internal controls, risk management, and operational efficiency. While statutory audit is conducted by an external auditor, internal audit can be conducted internally or outsourced.",
-  },
-  {
-    question: "What is the timeline for completing statutory audit?",
-    answer: "The audit report for companies should be submitted before the Annual General Meeting, which must be held within 6 months from the end of the financial year. Tax audit report is due by September 30th of the assessment year.",
-  },
-  {
-    question: "What are the auditor's responsibilities?",
-    answer: "The auditor is responsible for obtaining reasonable assurance about whether the financial statements are free from material misstatement, expressing an opinion on the financial statements, and reporting any fraud or irregularities to the appropriate authorities.",
-  },
-];
-
-export default function Audit() {
+function Audit() {
   return (
     <Layout>
       <PageHeader
-        title="Audit & Assurance"
-        description="Professional audit services including statutory audit, tax audit, and internal audit conducted as per applicable standards."
+        title="Audit"
+        description="Accurate and reliable financial audits to ensure compliance and transparency."
         breadcrumbs={[
           { label: "Services", href: "/services" },
-          { label: "Audit & Assurance" },
+          { label: "Audit" },
         ]}
       />
 
-      {/* Overview */}
-      <section className="section-padding">
-        <div className="container">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-6">
-                Overview
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Audit is an independent examination of financial information and internal 
-                controls to provide assurance on their accuracy and compliance with 
-                applicable laws and standards. It enhances the credibility of financial 
-                statements and helps identify areas for improvement.
-              </p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Our audit services are conducted in accordance with the Standards on Auditing 
-                issued by ICAI and applicable laws. We maintain professional independence and 
-                objectivity in all our audit engagements.
-              </p>
-
-              <h3 className="font-heading text-xl font-semibold mb-4">Types of Audits</h3>
-              <div className="grid md:grid-cols-2 gap-4 mb-8">
-                {auditTypes.map((audit, index) => (
-                  <div key={index} className="p-4 bg-surface rounded-lg border border-border">
-                    <h4 className="font-medium mb-2">{audit.title}</h4>
-                    <p className="text-sm text-muted-foreground">{audit.description}</p>
-                  </div>
-                ))}
-              </div>
-
-              <h3 className="font-heading text-xl font-semibold mb-4">Our Approach</h3>
-              <div className="space-y-3 mb-8">
-                {[
-                  "Risk-based audit methodology focusing on significant areas",
-                  "Understanding of business and industry-specific factors",
-                  "Evaluation of internal controls and their effectiveness",
-                  "Substantive testing of transactions and balances",
-                  "Clear communication of findings and recommendations",
-                  "Compliance with auditing standards and ethical requirements",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-accent mt-0.5 shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="bg-surface rounded-lg p-6 sticky top-24">
-                <h3 className="font-heading text-lg font-semibold mb-4">Applicable To</h3>
-                <ul className="space-y-3 mb-6">
-                  {[
-                    "Private Limited Companies",
-                    "Public Limited Companies",
-                    "LLPs (above threshold)",
-                    "Businesses requiring tax audit",
-                    "Trusts and Societies",
-                    "Government entities",
-                    "Non-profit organizations",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="accent" className="w-full" asChild>
-                  <Link to="/contact">Get Assistance</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Steps */}
-      <section className="section-padding bg-surface">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold text-center mb-12">
-            Audit Process
-          </h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="bg-background rounded-lg p-6 border border-border h-full">
-                  <span className="text-4xl font-heading font-bold text-accent/20">
-                    {step.step}
-                  </span>
-                  <h3 className="font-heading font-semibold text-lg mt-2 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <ArrowRight className="hidden md:block absolute top-1/2 -right-5 h-5 w-5 text-muted-foreground -translate-y-1/2" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section className="section-padding">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading text-2xl md:text-3xl font-semibold text-center mb-8">
-              Frequently Asked Questions
+      <section className="py-14">
+        <div className="max-w-6xl mx-auto space-y-6">
+          {/* <!-- Intro Section --> */}
+          <div>
+            <h2 className="text-2xl md:text-2xl font-medium text-gray-800 mb-2">
+              Most Trusted Secretarial Audit Services in Ahmedabad
             </h2>
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="bg-card rounded-lg border border-border px-6"
-                >
-                  <AccordionTrigger className="text-left font-medium hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+
+            <p className="text-gray-600 leading-relaxed mb-2">
+              <span className="font-semibold">
+                Yagya Prakash Sharda &amp; Co.
+              </span>{" "}
+              offers reliable and professional secretarial audit services in
+              Ahmedabad. In today’s competitive business environment,
+              organizations must comply with several corporate laws,
+              regulations, and reporting standards. Our audit and assurance team
+              helps businesses stay compliant while improving corporate
+              governance and operational transparency.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed">
+              Our services strengthen investor confidence, highlight improvement
+              areas, and support businesses in moving forward in the right
+              direction.
+            </p>
+          </div>
+
+          {/* <!-- Why Secretarial Audit --> */}
+          <div>
+            <h3 className="text-lg md:text-lg font-medium text-gray-800 mb-2">
+              Why Secretarial Audit and Compliance Support Matters
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed mb-2">
+              Secretarial audits are essential not only to meet legal
+              requirements but also to identify risks, enhance internal
+              controls, and safeguard stakeholder interests. We assist clients
+              in planning and managing:
+            </p>
+
+            <ul className="list-disc pl-6 text-gray-600 space-y-2">
+              <li>Legal and statutory compliance reviews</li>
+              <li>Internal and accounting-related audits</li>
+              <li>Due diligence and risk assessments</li>
+            </ul>
+
+            <p className="text-gray-600 leading-relaxed mt-4">
+              Whether you require an audit for a partnership firm, company, or
+              LLP, we focus on understanding your operations and delivering
+              practical, cost-effective solutions.
+            </p>
+          </div>
+
+          {/* <!-- Compliance & Corporate Law --> */}
+          <div>
+            <h3 className="text-lg md:text-lg font-medium text-gray-800 mb-2">
+              Expert Secretarial Compliance & Corporate Law Support
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed mb-2">
+              Our team understands the real challenges faced by business owners
+              — from statutory filings to annual compliance. As a leading
+              secretarial audit consultant in Gujarat, we work with
+              transparency, ethical practices, and standardized processes to
+              deliver dependable audit outcomes.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed">
+              Under the Companies Act, 2013, Secretarial Audit is defined as a
+              structured review of a company’s compliance with corporate laws,
+              rules, and regulations. Regular reviews help detect gaps, minimize
+              errors, and ensure smooth functioning of organizational systems.
+            </p>
+          </div>
+
+          {/* <!-- Risk & Compliance --> */}
+          <div>
+            <h3 className="text-lg md:text-lg font-medium text-gray-800 mb-2">
+              Ensuring Legal Compliance and Reduced Risk
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed">
+              Every company operates under multiple regulatory frameworks — and
+              non-compliance can create serious legal and financial
+              consequences. Through periodic inspection and documentation
+              review, we help assess whether applicable laws are being followed
+              and identify areas needing improvement.
+            </p>
+          </div>
+
+          <img src={audit} alt="audit" />
+
+          {/* <!-- Why Secretarial Audit Matters --> */}
+          <div>
+            <h2 className="text-lg font-medium text-gray-800 mb-4">
+              Why Secretarial Audit Matters
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Secretarial Audit services help management, regulators, and
+              stakeholders ensure that all legal and regulatory requirements are
+              properly followed. With compliance handled professionally,
+              companies can focus on efficiency, growth, and strategic
+              decision-making.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed">
+              Under Section 204 of the Companies Act, 2013, specific categories
+              of companies must obtain a Secretarial Audit Report from a
+              practicing Company Secretary or authorized Secretarial Audit firm.
+            </p>
+          </div>
+
+          {/* <!-- Companies Required --> */}
+          <div>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Companies Required to Undergo Secretarial Audit
+            </h3>
+
+            <ul className="list-disc pl-6 text-gray-600 space-y-2">
+              <li>All listed companies</li>
+              <li>
+                Public companies with paid-up share capital of ₹50 Crore or more
+              </li>
+              <li>Public companies with turnover of ₹250 Crore or more</li>
+            </ul>
+
+            <p className="text-gray-600 leading-relaxed mt-4">
+              Secretarial Audit also applies to private companies that are
+              subsidiaries of public companies and fall within prescribed
+              limits. Turnover refers to total revenue earned from goods and
+              services during the financial year.
+            </p>
+          </div>
+
+          {/* <!-- Scope --> */}
+          <div>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Scope of Secretarial Audit
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Secretarial auditors review whether companies comply with
+              applicable corporate and regulatory laws, including:
+            </p>
+
+            <ul className="list-disc pl-6 text-gray-600 space-y-2">
+              <li>Companies Act, 2013</li>
+              <li>Securities Contracts (Regulation) Act</li>
+              <li>Depositories Act, 1996</li>
+              <li>Foreign Exchange Management Act, 1999</li>
+              <li>SEBI rules and guidelines</li>
+              <li>Secretarial Standards by ICSI</li>
+              <li>Listing regulations and stock-exchange agreements</li>
+              <li>Other laws specific to the company’s operations</li>
+            </ul>
+
+            <p className="text-gray-600 leading-relaxed mt-4">
+              The audit goes beyond corporate law and covers every law that may
+              affect the company — making it difficult for owners to manage
+              without expert assistance.
+            </p>
+          </div>
+
+          {/* <!-- Support Across Gujarat --> */}
+          <div>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Secretarial Audit Support Across Gujarat
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Secretarial audit firms in Ahmedabad support businesses across
+              Gujarat — an industrial hub where compliance needs are constant.
+              Many firms specialize in handling annual mandatory compliances and
+              filings for listed companies across India.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed">
+              A listed company is one that trades its securities on a recognized
+              stock exchange, and must follow both Companies Act, 2013 and SEBI
+              (LODR) Regulations, 2015.
+            </p>
+          </div>
+
+          {/* <!-- Key Compliances --> */}
+          <div>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Key Secretarial Compliances for Listed Companies
+            </h3>
+
+            <ul className="list-disc pl-6 text-gray-600 space-y-2">
+              <li>Registrar of Companies filings</li>
+              <li>Tax-related compliance</li>
+              <li>Corporate governance and management filings</li>
+              <li>SEBI Listing Regulations and Secretarial Standards</li>
+              <li>Labour, environmental, and statutory law compliance</li>
+              <li>Event-based and periodic compliances</li>
+            </ul>
+
+            <p className="text-gray-600 leading-relaxed mt-4">
+              Since laws change frequently, Secretarial Audit professionals stay
+              updated and guide companies to avoid penalties and legal
+              complications.
+            </p>
+          </div>
+
+          {/* <!-- Professional Guidance --> */}
+          <div>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Professional Guidance You Can Rely On
+            </h3>
+
+            <p className="text-gray-600 leading-relaxed">
+              Secretarial Audit experts clearly explain compliance requirements
+              and help organizations stay aligned with hundreds of applicable
+              rules and regulations — ensuring accuracy, transparency, and peace
+              of mind for management.
+            </p>
           </div>
         </div>
       </section>
-
-      <ContactCTA 
-        title="Need Audit Services?"
-        description="Contact us to discuss your audit requirements. Our qualified team ensures thorough and timely completion."
-      />
     </Layout>
   );
 }
+
+export default Audit;

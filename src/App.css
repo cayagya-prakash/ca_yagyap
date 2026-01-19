@@ -17,6 +17,23 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.blogdetail-desc{
+  line-height: 5 !important;
+}
+.blogdetail-desc h2,h3, h4 {
+    color: var(--head-color);
+    font-size: 22px !important;
+    margin: 12px;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+  }
+ .blogdetail-desc p, li, a {
+    color: var(--para-color);
+    font-size: 15px;
+    text-align: start;
+    font-weight: 400;
+  }
+
 
 @keyframes logo-spin {
   from {
@@ -40,3 +57,4 @@
 .read-the-docs {
   color: #888;
 }
+

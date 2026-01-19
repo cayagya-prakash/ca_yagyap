@@ -26,7 +26,7 @@ export function ContactCTA({
               <Link to="/contact">Book a Consultation</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="tel:+919876543210">
+              <a href="tel:+919978480401">
                 <Phone className="mr-2 h-4 w-4" />
                 Call Us Now
               </a>

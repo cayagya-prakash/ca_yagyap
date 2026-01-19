@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import logo from "../../../public/ca_logo.png"
 
 const services = [
-  { name: "Income Tax & ITR Filing", href: "/services/income-tax" },
-  { name: "GST & Indirect Tax", href: "/services/gst" },
-  { name: "Audit & Assurance", href: "/services/audit" },
-  { name: "Accounting & Bookkeeping", href: "/services/accounting" },
-  { name: "Business Registration", href: "/services/registration" },
+  { title: "MSME Loan", href: "/services/msme-loan" },
+  { title: "Term Loan", href: "/services/term-loan" },
+  { title: "Working Capital Loan", href: "/services/working-capital-loan" },
+  { title: "SIDBI Loans", href: "/services/sidbi-loan" },
+  { title: "Project Finance Loan", href: "/services/project-finance-loan" },
+  { title: "Subsidy", href: "/services/subsidy" },
+  { title: "Audit", href: "/services/audit" },
+  { title: "Income Tax", href: "/services/incom-tax" },
+  { title: "GST", href: "/services/gst" },
+  { title: "ROC Work", href: "/services/roc-work" },
+  { title: "Home Loan", href: "/services/home-loan" },
+  { title: "Loan Against Property", href: "/services/loan-against-property  " },
 ];
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
-  { name: "Our Team", href: "/team" },
-  { name: "Blog & Resources", href: "/blog" },
+  // { name: "Our Team", href: "/team" },
+  { name: "Blog", href: "/blog" },
   { name: "FAQs", href: "/faqs" },
   { name: "Careers", href: "/careers" },
   { name: "Contact Us", href: "/contact" },
@@ -33,8 +41,8 @@ export function Footer() {
           <div className="space-y-6">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-accent rounded-sm flex items-center justify-center">
-                  <span className="text-accent-foreground font-heading font-bold">YPS</span>
+                <div className="w-10 h-10 bg-slate-50 p-1 rounded-sm flex items-center justify-center">
+                  <img src={logo} />
                 </div>
                 <div>
                   <p className="font-heading font-semibold text-lg leading-tight">
@@ -51,18 +59,18 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <p className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
-                <span className="opacity-80">123 Business District, Sector 18, Noida, UP - 201301</span>
+                <span className="opacity-80">Suyojan Tower, 803, Chimanlal Girdharlal Rd, Vasant Vihar, Navrangpura, Ahmedabad, Gujarat, 380009</span>
               </p>
               <p className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-accent" />
-                <a href="tel:+919876543210" className="opacity-80 hover:opacity-100 transition-opacity">
-                  +91 98765 43210
+                <a href="tel:+919978480401" className="opacity-80 hover:opacity-100 transition-opacity">
+                  +91 99784 80401
                 </a>
               </p>
               <p className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-accent" />
-                <a href="mailto:info@ypsca.com" className="opacity-80 hover:opacity-100 transition-opacity">
-                  info@ypsca.com
+                <a href="mailto:cayagya@gmail.com" className="opacity-80 hover:opacity-100 transition-opacity">
+                  cayagya@gmail.com
                 </a>
               </p>
               <p className="flex items-center gap-3">
@@ -74,7 +82,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-6">Our Services</h3>
+            <h3 className="font-heading text-white font-semibold text-lg mb-6">Our Services</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
@@ -82,7 +90,7 @@ export function Footer() {
                     to={service.href}
                     className="text-sm opacity-80 hover:opacity-100 hover:text-accent transition-all"
                   >
-                    {service.name}
+                    {service.title}
                   </Link>
                 </li>
               ))}
@@ -91,7 +99,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-6">Quick Links</h3>
+            <h3 className="font-heading text-white font-semibold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -108,7 +116,7 @@ export function Footer() {
 
           {/* Legal & Registration */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-6">Legal</h3>
+            {/* <h3 className="font-heading text-white font-semibold text-lg mb-6">Legal</h3>
             <ul className="space-y-3 mb-8">
               {legal.map((link) => (
                 <li key={link.href}>
@@ -120,7 +128,7 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
             <div className="p-4 bg-primary-foreground/10 rounded-md">
               <p className="text-xs font-medium mb-2">Firm Registration</p>
               <p className="text-xs opacity-80">FRN: 123456N</p>
@@ -133,7 +141,7 @@ export function Footer() {
       {/* Disclaimer */}
       <div className="border-t border-primary-foreground/20">
         <div className="container py-6">
-          <div className="bg-primary-foreground/5 rounded-md p-4 mb-6">
+          {/* <div className="bg-primary-foreground/5 rounded-md p-4 mb-6">
             <p className="text-xs opacity-80 leading-relaxed">
               <strong>Disclaimer:</strong> The information contained on this website is for general guidance 
               and informational purposes only. It does not constitute professional advice. The contents 
@@ -143,7 +151,7 @@ export function Footer() {
               on the information provided on this website. This website is published in compliance with 
               the guidelines issued by the Institute of Chartered Accountants of India (ICAI).
             </p>
-          </div>
+          </div> */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs opacity-80">
             <p>© {new Date().getFullYear()} Yagya Prakash Sharda & Co. All rights reserved.</p>
             <p>Website in compliance with ICAI Advisory on Website Guidelines</p>

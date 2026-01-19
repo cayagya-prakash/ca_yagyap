@@ -3,6 +3,22 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* For WebKit-based browsers (Chrome, Safari, Edge, Opera) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Important to remove margin in older Chrome versions */
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Standard property for future compatibility */
+input[type=number] {
+  appearance: none;
+}
 
 @layer base {
   :root {
@@ -135,7 +151,7 @@
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-16 md:py-14;
   }
 
   .text-balance {
