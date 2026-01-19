@@ -9,9 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function Blog() {
   const { data: posts, isLoading, error } = useBlogPosts();
   const [selectedVideo, setSelectedVideo] = useState<BlogPost | null>(null);
-  console.log("selectedVideo", selectedVideo);
   const handleVideoClick = (post: BlogPost) => {
-    console.log("handleVideoClick", post);
     setSelectedVideo(post);
   };
 
