@@ -14,7 +14,6 @@ interface BlogData {
 
 function BlogDetails() {
   const params = useParams();
-  console.log("params", params.id);
   const blogId = params?.id || null;
   const [loader, setLoader] = useState(false);
   const [data, setData] = useState<BlogData>({});

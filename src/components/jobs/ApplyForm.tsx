@@ -32,8 +32,6 @@ export default function ApplyForm({
   const { _id, jobtitle } = useParams();
   const [loader, setLoader] = useState(false);
   const decodedJobTitle = decodeURIComponent(jobtitle);
-  //  console.log("jobTitle",jobtitle)
-  console.log("decodedJobTitle", _id);
 
   const formik = useFormik({
     initialValues: {

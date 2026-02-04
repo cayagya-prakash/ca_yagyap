@@ -122,7 +122,7 @@ export default function About() {
       <section className="section-padding">
         <div className="container">
           <div className=" py-14">
-            <div className=" mx-auto px-5 space-y-5">
+            <div className=" mx-auto space-y-5">
               {/* <!-- Section Header --> */}
               <div>
                 <h2 className="text-2xl md:text-2xl font-medium text-gray-900">

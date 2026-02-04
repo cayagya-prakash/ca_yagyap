@@ -20,7 +20,6 @@ export function VideoModal({
   title,
 }: VideoModalProps) {
   if (!videoId) return null;
-console.log("isOpen",isOpen)
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-4xl p-0 overflow-hidden">

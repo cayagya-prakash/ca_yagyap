@@ -165,7 +165,7 @@ export function HeroSection() {
                   {/* Update Items */}
                   <div className="space-y-0">
                     {/* Item 1 */}
-                    {data.slice(0,4).filter((b)=>b.status === "publish").map((b) => (
+                    {data.length ? data.slice(0,4).filter((b)=>b.status === "publish").map((b) => (
                       <div className="py-4 border-b border-border">
                         <div className="flex items-start gap-3">
                           <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -190,7 +190,7 @@ export function HeroSection() {
                           </div>
                         </div>
                       </div>
-                    ))}
+                    )):<p className="text-center">No data</p>}
 
                
                   </div>

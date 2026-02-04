@@ -49,7 +49,8 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
     },
   });
 
-  return res.blogs;
+  if(res.status === true)  return res.blogs;
+ 
 
   // Simulating API delay
   // await new Promise((resolve) => setTimeout(resolve, 300));

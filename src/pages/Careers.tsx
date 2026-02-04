@@ -36,7 +36,6 @@ export default function Careers() {
     fetchData();
   }, []);
 
-  console.log("data", data);
   return (
     <Layout>
       <PageHeader

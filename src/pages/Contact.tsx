@@ -45,7 +45,6 @@ export default function Contact() {
     validationSchema: validationSchema,
     enableReinitialize: true,
     onSubmit: async (values) => {
-      console.log("values", values);
       setLoading(true);
       const data = {
         ...values
@@ -58,7 +57,6 @@ export default function Contact() {
             "Content-Type": "application/json",
           },
         });
-        console.log("res",res)
         if (res.data.status === true) {
           setLoading(false);
           setInitialValues({
@@ -81,8 +79,6 @@ export default function Contact() {
       }
     },
   });
-
-  console.log("AAAA", formik);
   return (
     <Layout>
       <PageHeader

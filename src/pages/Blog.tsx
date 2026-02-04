@@ -29,9 +29,7 @@ export default function Blog() {
       return null;
     }
   };
-  {
-    console.log("posts", posts);
-  }
+
   return (
     <Layout>
       <PageHeader
@@ -69,7 +67,7 @@ export default function Blog() {
             </div>
           )}
 
-          {posts && (
+          {posts ? (
             <div className="grid md:grid-cols-2 gap-6">
               {posts.map((post) => (
                 <>
@@ -82,7 +80,7 @@ export default function Blog() {
                 </>
               ))}
             </div>
-          )}
+          ):<p className="text-center">No Data</p>}
         </div>
       </section>
       {/* Video Modal */}

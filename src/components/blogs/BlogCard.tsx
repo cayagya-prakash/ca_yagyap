@@ -12,7 +12,6 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ post, onVideoClick }: BlogCardProps) {
-  console.log("post", post);
   const isVideo = post.posttype === "video";
 
 const handleClick = (e: React.MouseEvent) => {
