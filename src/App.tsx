@@ -19,14 +19,15 @@ import WorkingCapital from "./pages/services/working_capital";
 import SIDBI from "./pages/services/sidbi";
 import ProjectFinance from "./pages/services/project_finance";
 import Subsidy from "./pages/services/subsidy";
+
+import BlogDetails from "./components/blogs/BlogDetail";
+import ApplyForm from "./components/jobs/ApplyForm";
+import Audit from "./pages/services/audit";
 import InComeTax from "./pages/services/incometax";
 import GST from "./pages/services/gst";
 import RocWork from "./pages/services/rocwork";
 import HomeLoan from "./pages/services/homeloan";
 import LoanAgainstProperty from "./pages/services/loanagainstproperty";
-import BlogDetails from "./components/blogs/BlogDetail";
-import ApplyForm from "./components/jobs/ApplyForm";
-import Audit from "./pages/services/audit";
 
 const queryClient = new QueryClient();
 
