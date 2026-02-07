@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import homeloan from "../../../public/homeloan.jpeg";
+import homeloan from "../../../src/assests/homeloan.jpeg";
 
 function HomeLoan() {
   return (

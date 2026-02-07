@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import loanagainstproperty from "../../../public/loanagainstproperty.jpeg";
+import loanagainstproperty from "../../../src/assests/loanagainstproperty.jpeg";
 
 function LoanAgainstProperty() {
   return (

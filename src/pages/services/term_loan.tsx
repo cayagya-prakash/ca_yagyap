@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
-import term from "../../../public/termloan.jpg";
+import term from "./../../../src/assests/termloan.jpg";
 
 function Termloan() {
   return (

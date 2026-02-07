@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import logo from "../../../public/ca_logo.png"
+import logo from "../../../src/assests/ca_logo.png"
 
 const services = [
   { title: "MSME Loan", href: "/services/msme-loan" },

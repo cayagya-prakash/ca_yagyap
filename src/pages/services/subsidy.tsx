@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
-import subsidy from "../../../public/subsidy.jpg";
+import subsidy from "./../../../src/assests/subsidy.jpg";
 
 function Subsidy() {
   return (

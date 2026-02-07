@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
-import sidbi from "../../../public/SIDBI.jpg";
+import sidbi from "../../../src/assests/SIDBI.jpg";
 
 function SIDBI() {
   return (

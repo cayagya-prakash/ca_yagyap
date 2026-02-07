@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
-import msme from "../../../public/msme.jpg";
+import msme from "../../../src/assests/msme.jpg";
 
 function Msmeloan() {
   return (

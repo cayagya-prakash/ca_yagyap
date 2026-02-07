@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
-import workingcapital from "../../../public/workingCapital.jpg";
+import workingcapital from "../../../src/assests/workingcapital.jpg";
 
 function WorkingCapital() {
   return (

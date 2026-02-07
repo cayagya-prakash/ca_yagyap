@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
-import gst from "../../../public/gst.jpeg";
+import gst from "../../../src/assests/gst.jpeg";
 
 function GST() {
   return (

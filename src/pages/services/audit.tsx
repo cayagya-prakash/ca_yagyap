@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
-import audit from "../../../public/audit.jpg";
+import audit from "../../../src/assests/audit.jpg";
 
 function Audit() {
   return (
