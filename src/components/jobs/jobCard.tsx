@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 interface Job {
-  _id: string;
+  id: string;
   jobTitle: string;
   jobType: string;
   department: string;
@@ -76,7 +76,7 @@ export function JobCard({ job }: { job: Job }) {
       <CardFooter className="flex justify-end">
         <div>
           <Button variant="accent" className="w-full" asChild>
-            <Link to={`/applyjob/${job._id}/${job.jobTitle}`}>Apply Now</Link>
+            <Link to={`/applyjob/${job.id}/${job.jobTitle}`}>Apply Now</Link>
           </Button>
         </div>
       </CardFooter>

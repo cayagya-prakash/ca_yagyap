@@ -12,8 +12,8 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ post, onVideoClick }: BlogCardProps) {
+  
   const isVideo = post.posttype === "video";
-
 const handleClick = (e: React.MouseEvent) => {
   if (post.posttype === "video" && onVideoClick) {
     e.preventDefault();
@@ -25,7 +25,7 @@ const handleClick = (e: React.MouseEvent) => {
   const cardProps = isVideo
     ? { onClick: handleClick, type: "button" as const }
     : { to: post.id ? `/blog/${post.id}` : "#" };
-
+console.log("post.id",post.id)
   return (
     <article className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-elevated transition-all group">
       {/* Thumbnail Section */}
@@ -91,7 +91,7 @@ const handleClick = (e: React.MouseEvent) => {
             </Link>
           ) : (
             <Link
-              to={post._id ? `/blog/${post._id}` : "#"}
+              to={post.id ? `/blog/${post.id}` : "#"}
               className="inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors"
             >
               Read More <ArrowRight className="ml-2 h-4 w-4" />

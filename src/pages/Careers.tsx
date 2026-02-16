@@ -17,7 +17,7 @@ export default function Careers() {
         },
       });
 
-      if (res.message === "Get Jobs Scussfully!!!") {
+      if (res.status === true) {
         const result = res.jobs;
         setData(result);
         setLoader(false);

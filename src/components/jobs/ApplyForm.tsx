@@ -66,6 +66,7 @@ export default function ApplyForm({
 
     onSubmit: async (values) => {
       try {
+        console.log("value", values)
         setLoader(true);
 
         const formData = new FormData();
@@ -108,7 +109,7 @@ export default function ApplyForm({
       }
     },
   });
-
+console.log("formik", formik.errors)
   return (
     <Layout>
       <PageHeader
