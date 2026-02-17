@@ -50,13 +50,13 @@ export function HeroSection() {
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await GetBlogbyid(); // ✔️ now state update happens asynchronously
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     await GetBlogbyid(); // ✔️ now state update happens asynchronously
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <>
@@ -163,8 +163,8 @@ export function HeroSection() {
                   </div>
 
                   {/* Update Items */}
-                  <div className="space-y-0">
-                    {/* Item 1 */}
+                  {/* <div className="space-y-0">
+                    
                     {data.length ? data.slice(0,4).filter((b)=>b.status === "publish").map((b) => (
                       <div className="py-4 border-b border-border">
                         <div className="flex items-start gap-3">
@@ -193,9 +193,9 @@ export function HeroSection() {
                     )):<p className="text-center">No data</p>}
 
                
-                  </div>
+                  </div> */}
 
-                  {/* View All Button */}
+                
                   <Link
                     to="/blog"
                     className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary/5 text-primary text-sm font-medium hover:bg-primary/10 transition-colors"
